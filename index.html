@@ -1,0 +1,100 @@
+<html>
+<head>
+  <title>Perfect Pitching</title>
+  <link href='http://fonts.googleapis.com/css?family=Alike' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT|Yanone+Kaffeesatz|Tangerine'
+   rel='stylesheet' type='text/css'>
+  <link href="style.css" media="screen" rel="Stylesheet" type="text/css" />
+  <!-- Support Sources -->
+  <link href="./releases/vextab.css" media="screen" rel="Stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script> VEXTAB_USE_SVG = true </script>
+  <script src="./releases/vextab-div.js"></script>
+  <script> VexTabDiv.Artist.DEBUG = false</script>
+  <script src="js/pitchdetect.js"></script>
+  <script src="js/link.js"></script>
+</head>
+
+<body>
+<nav class="site-header sticky-top py-1 bg-dark">
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+       <h1 class="h1 text-light">Perfect Pitching<h1> 
+      </div>
+</nav>
+<div class="container">
+
+<div class="row">
+<div class="col-xl-8">
+	<h2 class="h2 text-secondary">Sheet</h2>
+
+
+	<div style="width:100%; margin-left: 5%; margin-right: auto;">
+		<div class="vex-tabdiv h6"
+		  width=600px scale=1.0 editor="true"
+		  height= 30% editor_width=80% editor_height=30%>options space=20
+
+tabstave
+  notation=true
+  key=A time=4/4
+
+  notes :q =|: (5/2.5/3.7/4) :8 7-5h6/3 ^3^ 5h6-7/5 ^3^ :q 7V/4 |
+  notes :8 t12p7/4 s5s3/4 :8 3s:16:5-7/5 :h p5/4
+  text :w, |#segno, ,|, :hd, , #tr
+
+
+options space=25
+
+tabstave
+  notation=true
+
+  notes :q (5/4.5/5) (7/4.7/5)s(5/4.5/5) ^3^
+  notes :8 7-5/4 $.a./b.$ (5/4.5/5)h(7/5) =:|
+  notes :8 (12/5.12/4)ds(5/5.5/4)u 3b4/5
+  notes :h (5V/6.5/4.6/3.7/2) $.italic.let ring$ =|=
+
+  text :h, ,.font=Times-12-italic, D.S. al coda, |#coda
+  text :h, ,.-1, .font=Arial-14-bold,A13
+  text ++, .23, #f
+		</div>
+	</div>
+</div>
+
+<div class="col-xl-4">
+	<h2 class="h2 text-secondary ">Pitch Sensing</h2>
+	<div class="btn-group">
+		<p>
+			<button type="button" class="btn btn-secondary" onclick="this.innerText = togglePlayback()">demo audio</button>
+			<button type="button" class="btn btn-secondary"  onclick="toggleLiveInput()">live input</button>
+			<button type="button" class="btn btn-secondary"  onclick="toggleOscillator()">oscillator</button>
+		</p>
+	</div>
+	
+	<div id="detector" class="vague">
+		<div class="pitch"><span id="pitch">--</span>Hz</div>
+		<div class="note"><span id="note">--</span></div>   
+		<canvas id="output" width=300 height=42></canvas>
+		<div id="detune"><span id="detune_amt">--</span><span id="flat">cents &#9837;</span><span id="sharp">cents &#9839;</span></div>
+	</div>
+	<div class="youtube">
+		<h2 class="h2 text-secondary ">Music Streaming</h2>
+		<div class="form-group">
+			<label for="exampleInputEmail1">Youtube Link</label>
+			<input type="email" class="form-control" id="url_input" aria-describedby="emailHelp" placeholder="Enter music link"  onchange="new_video()">
+		</div>
+		<iframe id='myIframe' width="120%" height=30% src="https://www.youtube.com/embed/lJGZHviS6wo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+	<div class="description lead">
+	<h2 class="h2 text-secondary">Reference</h2>
+      VexTab designed to be easy to learn and intuitive to use. Follow the
+      tutorial on the <a href="tutorial.html">VexTab Tutorial</a> page to quickly
+      get started using VexTab.
+	</div>
+</div>
+
+
+	
+</body>
+</html>
